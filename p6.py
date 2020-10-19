@@ -31,7 +31,7 @@ def main():
         LTy_minus = []
         for theta in range(0, 101, 1):
                 #change step size
-                theta = pi*(theta/100)
+                theta = -pi/2 + pi*(theta/100)
                 #calc
                 LT = linear_transform(cos(theta),sin(theta))
                 LTx_plus.append(LT[0])
@@ -39,7 +39,7 @@ def main():
 
         for theta in range(0, 101, 1):
                 # change step size.
-                theta = pi + pi*(theta/100)
+                theta = pi/2 + pi*(theta/100)
                 #calc
                 LT = linear_transform(cos(theta),sin(theta))
                 LTx_minus.append(LT[0])
@@ -50,8 +50,8 @@ def main():
         point2 = linear_transform(1/sqrt(2), 1/sqrt(2))
         #plot
         plt.figure(1)
-        plt.plot(LTx_plus, LTy_plus, 'b')
-        plt.plot(LTx_minus, LTy_minus, 'r')
+        plt.plot(LTx_plus, LTy_plus, 'r')
+        plt.plot(LTx_minus, LTy_minus, 'b')
         plt.plot(point1[0], point1[1] , 'ro', label = "point (1,0)")
         plt.plot(point2[0], point2[1] , 'bo', label = "point (1/sqrt2, 1/sqrt2)")
         plt.legend(loc="upper left")
